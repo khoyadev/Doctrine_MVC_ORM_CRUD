@@ -7,45 +7,30 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Entity
  * @ORM\Table(name="user")
  */
-    class User 
+    class User
     {
-            /**
+           /**
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue
      */
         private $id;
-           /**
+         /**
      * @ORM\Column(type="string")
      */
-        private $nom;
-           /**
-     * @ORM\Column(type="string")
-     */
-        private $prenom;
-           /**
+        private $username;
+        
+     /**
      * @ORM\Column(type="string")
      */
         private $email;
-           /**
+      /**
      * @ORM\Column(type="string")
      */
         private $password;
-           /**
-     * One user has many lieux. This is the inverse side.
-     * @ORM\OneToMany(targetEntity="Lieu", mappedBy="user")
-     */
-        private $lieux;
-          /**
-     * Many Users have Many Roles.
-     * @ORM\ManyToMany(targetEntity="Roles", inversedBy="users")
-     * @ORM\JoinTable(name="users_roles")
-     */
-        private $roles;
+        
          
         public function __construct(){
-            $this->roles = new ArrayCollection();
-            $this->lieux = new ArrayCollection();
 
         }
 
@@ -58,18 +43,13 @@ use Doctrine\Common\Collections\ArrayCollection;
             $this->id=$id;
         }
 
-        public  function getNom(){
-            return $this->nom;
+        public  function getUsername(){
+            return $this->username;
         }
-        public  function setNom($nom){
-            $this->nom=$nom;
+        public  function setUsername($username){
+            $this->username=$username;
         }
-        public  function getPrenom(){
-            return $this->prenom;
-        }
-        public  function setPrenom($prenom){
-            $this->prenom=$prenom;
-        }
+
         public  function getEmail(){
             return $this->email;
         }
@@ -77,26 +57,12 @@ use Doctrine\Common\Collections\ArrayCollection;
             $this->email=$email;
         }
 
-        public  function getFormation(){
-            return $this->formations;
+        public  function getPassword(){
+            return $this->password;
         }
-        public  function setFormation($formations){
-            $this->formations=$formations;
+        public  function setPassword($password){
+            $this->password=$password;
         }
-
-        public  function getLieux(){
-            return $this->lieux;
-        }
-        public  function setLieux($lieux){
-            $this->lieux=$lieux;
-        }
-        public  function getRoles(){
-            return $this->roles;
-        }
-        public  function setUser($roles){
-            $this->roles=$roles;
-        }
-
 
     }
     

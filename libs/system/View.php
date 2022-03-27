@@ -11,7 +11,7 @@ class View
         $args=func_get_args();
         switch ($num) {
             case 1:
-                $url = 'http://localhost:8081/projects/lpgl/tpmvc/tpORM/';
+                $url = 'http://localhost/PHP/DoctrineOrmMvc/';
                 $file="src/view/".$args[0].".php";
                 
                 if (file_exists($file)) {
@@ -25,7 +25,7 @@ class View
                     $file="src/view/".$args[0].".php";
                 if (file_exists($file)) {
                     $data=$args[1];
-                    $url = 'http://localhost:8081/projects/lpgl/tpmvc/tpORM/public/';
+                    $url = 'http://localhost/PHP/DoctrineOrmMvc/public/';
                    require_once $file;
                 }else {
                     die($file." n'existe pas comme vue");

@@ -35,6 +35,7 @@ class BootStrap
             }
         }else {
             echo "MVC";
+           // require_once "src/view/login.php";
             
         }
     }
